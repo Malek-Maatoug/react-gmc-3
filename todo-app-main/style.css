@@ -123,3 +123,7 @@ footer {
 .items-left::after {
   content: " items left";
 }
+p {
+  font-size: 20px;
+  font-weight: bold;
+}
