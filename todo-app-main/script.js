@@ -49,5 +49,4 @@ tasksWrap.innerHTML = `i'm ${name}, my phone number is : ${phone}`;
 const addFn = (x = 20, y = 50) => {
   return x + y;
 };
-console.log(addFn(2, 3));
 console.log(addFn());
