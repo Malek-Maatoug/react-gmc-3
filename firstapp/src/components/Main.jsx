@@ -1,9 +1,10 @@
-import React from "react";
+//import React from "react";
 
 const Main = () => {
   return (
     <div className="main-news col-span-2 flex flex-col gap-6">
-      <div className="h-1/2">
+      <div className="h-1/2"> 
+      
         <img
           className="object-cover w-full"
           src="./assets/images/image-web-3-desktop.jpg"
