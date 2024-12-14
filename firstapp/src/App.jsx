@@ -5,9 +5,9 @@ import Main from "./components/Main";
 import News from "./components/News";
 function App() {
   return (
-    <div className="py-10 px-20">
+    <div className="px-2 py1 md:py-10 md:px-20">
       <Navbar />
-      <div className="grid grid-cols-3 gap-6 mb-6">
+      <div className="grid  md:grid-cols-3 gap-3 md:gap-6 mb-6">
         <Main />
         <News />
       </div>

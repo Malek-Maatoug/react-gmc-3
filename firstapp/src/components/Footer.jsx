@@ -23,7 +23,7 @@ const Footer = () => {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-6">
+    <div className="grid md:grid-cols-3 gap-6">
       {articles.map((v) => (
         <FooterArticle data={v} />
       ))}
