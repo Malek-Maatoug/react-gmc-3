@@ -7,3 +7,14 @@ body {
 main {
   min-height: 100vh;
 }
+span::after {
+  content: "/person";
+  color: grey;
+  display: block;
+  font-size: 10px;
+  opacity: 0.5;
+}
+.output h1::before {
+  content: "$";
+  margin-right: 0;
+}
