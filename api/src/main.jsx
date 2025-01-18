@@ -20,6 +20,10 @@ const router = createBrowserRouter([
         element: <Admin />,
       },
       {
+        path: "/admin/edit/:id",
+        element: <Admin />,
+      },
+      {
         path: "/details/:id",
         element: <Details />,
       },

@@ -1,12 +1,33 @@
-import React, { useState } from "react";
-
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { useParams } from "react-router-dom";
 const Form = () => {
-  const [formData, setFormData] = useState({
-    id: "",
+  const [users, setUsers] = useState({
+    userId: "",
     title: "",
     body: "",
   });
+  const { id } = useParams();
+  const getUsers = async () => {
+    const res = await axios.get(`http://localhost:3000/users/${id}`);
+    setUsers(res.data);
+  };
+  const [formData, setFormData] = useState({
+    userId: "",
+    title: "",
+    body: "",
+  });
+  useEffect(() => {
+    if (id) {
+      getUsers();
+      if (users) {
+        const { userId, body, title } = users;
+        setFormData({ userId, body, title });
+      }
+    }
+  }, [users.userId]);
 
+  console.log(formData);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -15,10 +36,20 @@ const Form = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    console.log(formData);
     // Handle form submission logic here
-    console.log("Form submitted:", formData);
+    if (id) {
+      await axios.patch("http://localhost:3000/users/" + id, formData);
+    } else {
+      await axios.post("http://localhost:3000/users", formData);
+    }
+    setFormData({
+      userId: "",
+      title: "",
+      body: "",
+    });
   };
 
   return (
